@@ -12,7 +12,6 @@ const cjs = {
 }
 
 const esm = {
-  exports: 'named',
   format: 'es',
 }
 
