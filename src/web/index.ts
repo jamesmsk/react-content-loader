@@ -1,28 +1,33 @@
-import { SVGAttributes } from 'react'
+import Button from './Button'
 
-import ContentLoader from './ContentLoader'
+export type ButtonKinds =
+  | 'primary'
+  | 'ghost'
+  | 'tertiary'
+  | 'danger'
+  | 'danger--ghost'
+  | 'danger--tertiary'
 
-export interface IContentLoaderProps extends SVGAttributes<SVGElement> {
-  animate?: boolean
-  backgroundColor?: string
-  backgroundOpacity?: number
-  baseUrl?: string
-  foregroundColor?: string
-  foregroundOpacity?: number
-  gradientRatio?: number
-  gradientDirection?: 'left-right' | 'top-bottom'
-  interval?: number
-  rtl?: boolean
-  speed?: number
-  title?: string
-  uniqueKey?: string
-  beforeMask?: JSX.Element
+export type ButtonSizes = 'default' | 'field' | 'sm'
+
+export type IconPositions = 'top' | 'left' | 'right'
+
+export type ButtonProps<T extends React.ElementType> = {
+  as?: T
+  prefix?: string
+  kind?: ButtonKinds
+  children?: React.ReactNode
+  className?: string | undefined
+  disabled?: boolean
+  icon?: string | boolean
+  iconOnly?: boolean
+  iconPosition?: IconPositions | undefined
+  size?: ButtonSizes
+} & React.ComponentPropsWithoutRef<T>
+
+export interface MaterialIconProps {
+  kind: ButtonKinds
+  icon?: string | boolean
 }
 
-export { default as Facebook } from './presets/FacebookStyle'
-export { default as Instagram } from './presets/InstagramStyle'
-export { default as Code } from './presets/CodeStyle'
-export { default as List } from './presets/ListStyle'
-export { default as BulletList } from './presets/BulletListStyle'
-
-export default ContentLoader
+export default Button

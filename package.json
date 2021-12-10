@@ -1,5 +1,5 @@
 {
-  "name": "react-content-loader",
+  "name": "component-react-ts",
   "description": "SVG-Powered component to easily create placeholder loadings (like Facebook cards loading)",
   "repository": {
     "type": "git",
@@ -7,24 +7,10 @@
   },
   "author": "Danilo Woznica <danilowoz@gmail.com>",
   "license": "MIT",
-  "main": "dist/react-content-loader.cjs.js",
-  "module": "dist/react-content-loader.es.js",
-  "jsnext:main": "dist/react-content-loader.es.js",
+  "main": "dist/component-react-ts.cjs.js",
+  "module": "dist/component-react-ts.es.js",
+  "jsnext:main": "dist/component-react-ts.es.js",
   "types": "dist/web/index.d.ts",
-  "bugs": {
-    "url": "https://github.com/danilowoz/react-content-loader/issues"
-  },
-  "homepage": "https://github.com/danilowoz/react-content-loader",
-  "keywords": [
-    "react",
-    "react-native",
-    "skeleton",
-    "placeholder",
-    "loader",
-    "loading",
-    "content",
-    "svg"
-  ],
   "files": [
     "dist",
     "native"
@@ -32,7 +18,7 @@
   "sideEffects": false,
   "scripts": {
     "dev": "start-storybook -p 6006",
-    "build": "rm -fr ./dist ./native && rollup -c && npm run test:size",
+    "build": "rm -fr ./dist ./native && rollup -c",
     "build:docs": "build-storybook -o docs-build",
     "test": "npm run test:tsc && npm run test:unit",
     "test:unit": "npm run test:unit:web && npm run test:unit:native",
@@ -47,8 +33,18 @@
     "lint": "eslint --ext .jsx --ext .ts,.tsx src/",
     "release": "semantic-release"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@carbon/icons-react": "^10.44.0",
+    "carbon-components": "^10.49.0",
+    "carbon-components-react": "^7.49.1",
+    "carbon-icons": "7.0.7",
+    "js-cookie": "^3.0.1",
+    "@mskcc/fundamentals": "^0.2.0"
+  },
   "devDependencies": {
+    "@types/carbon-components-react": "^7.46.1",
+    "@types/carbon__icons-react": "^10.31.2",
+    "@types/js-cookie": "^3.0.1",
     "@babel/core": "7.7.7",
     "@babel/polyfill": "7.7.0",
     "@babel/preset-env": "7.7.7",
@@ -75,6 +71,7 @@
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
     "bundlesize": "^0.18.1",
+    "classnames": "^2.3.1",
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "6.8.0",
