@@ -1,5 +1,3 @@
-import Button from './Button'
-
 export type ButtonKinds =
   | 'primary'
   | 'ghost'
@@ -30,4 +28,4 @@ export interface MaterialIconProps {
   icon?: string | boolean
 }
 
-export default Button
+export { default as Button } from './components/Button'

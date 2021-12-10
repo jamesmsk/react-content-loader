@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { ButtonProps, MaterialIconProps } from '.'
+import { ButtonProps, MaterialIconProps } from '..'
 
 const MaterialSharpIcon = ({ kind, icon }: MaterialIconProps) => {
   return (

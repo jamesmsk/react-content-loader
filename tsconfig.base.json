@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./dist/types",
-    "declarationMap": true,
+    "declarationMap": false,
     "esModuleInterop": true,
     "jsx": "react",
     "lib": ["es6"],
@@ -10,7 +10,7 @@
     "noImplicitAny": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "target": "es5"
   },
   "include": ["./src/**/*"],

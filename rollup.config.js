@@ -6,16 +6,15 @@ import pkg from './package.json'
 
 const mergeAll = objs => Object.assign({}, ...objs)
 
-// const cjs = {
-//   exports: 'named',
-//   format: 'cjs',
-//   sourcemap: true,
-// }
+const cjs = {
+  exports: 'named',
+  format: 'cjs',
+}
 
-// const esm = {
-//   format: 'es',
-//   sourcemap: true,
-// }
+const esm = {
+  exports: 'named',
+  format: 'es',
+}
 
 const globals = {
   react: 'React',
@@ -42,7 +41,7 @@ const configBase = {
 const umdConfig = mergeAll([
   configBase,
   {
-    input: 'src/web/index.ts',
+    input: 'src/index.ts',
     output: mergeAll([
       configBase.output,
       {
@@ -59,7 +58,7 @@ const umdConfig = mergeAll([
 const devUmdConfig = mergeAll([
   umdConfig,
   {
-    input: 'src/web/index.ts',
+    input: 'src/index.ts',
     plugins: umdConfig.plugins.concat(
       replace({
         'process.env.NODE_ENV': JSON.stringify('development'),
@@ -68,16 +67,16 @@ const devUmdConfig = mergeAll([
   },
 ])
 
-// const webConfig = mergeAll([
-//   configBase,
-//   {
-//     input: 'src/web/index.ts',
-//     output: [
-//       mergeAll([configBase.output, { ...esm, file: pkg.module }]),
-//       mergeAll([configBase.output, { ...cjs, file: pkg.main }]),
-//     ],
-//     plugins: configBase.plugins.concat(),
-//   },
-// ])
+const webConfig = mergeAll([
+  configBase,
+  {
+    input: 'src/index.ts',
+    output: [
+      mergeAll([configBase.output, { ...esm, file: pkg.module }]),
+      mergeAll([configBase.output, { ...cjs, file: pkg.main }]),
+    ],
+    plugins: configBase.plugins.concat(),
+  },
+])
 
-export default [devUmdConfig]
+export default [devUmdConfig, webConfig]
