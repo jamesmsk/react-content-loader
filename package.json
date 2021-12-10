@@ -7,10 +7,10 @@
   },
   "author": "Danilo Woznica <danilowoz@gmail.com>",
   "license": "MIT",
-  "main": "dist/component-react-ts.cjs.js",
-  "module": "dist/component-react-ts.es.js",
-  "jsnext:main": "dist/component-react-ts.es.js",
-  "types": "dist/web/index.d.ts",
+  "main": "dist/msk.cjs.js",
+  "module": "dist/msk.es.js",
+  "jsnext:main": "dist/msk.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "native"

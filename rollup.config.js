@@ -44,7 +44,7 @@ const umdConfig = mergeAll([
     output: mergeAll([
       configBase.output,
       {
-        file: `dist/msk-umd.js`,
+        file: `dist/msk.umd.js`,
         format: 'umd',
         name: 'MSK',
         globals,
